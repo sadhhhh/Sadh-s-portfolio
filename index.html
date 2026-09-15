@@ -1,84 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sadhana Manikandan</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:#0f0b1e;color:#fff;scroll-behavior:smooth}
-nav{position:fixed;top:0;width:100%;z-index:99;display:flex;justify-content:space-between;padding:16px 24px;background:rgba(15,11,30,0.8);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff14}
-.logo{font-weight:800} .logo span{color:#a78bfa}
-.nlinks{display:flex;gap:10px;font-size:11px;font-weight:600}
-.nlinks a{color:#cbd5e1;text-decoration:none}
-.hero{min-height:100vh;display:flex;align-items:center;padding:100px 24px 50px;background:radial-gradient(80% 80% at 20% 10%,#4c1d95 0%,#0f0b1e 60%)}
-.wrap{max-width:1100px;margin:auto;width:100%;display:flex;flex-direction:column;gap:30px;align-items:center}
-@media(min-width:900px){.wrap{flex-direction:row;justify-content:space-between}}
-.h-left{position:relative;width:380px;height:380px}
-.h-img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:270px;height:270px;border-radius:50%;overflow:hidden;border:4px solid #ffffff22;box-shadow:0 0 80px #a78bfa55}
-.h-img img{width:100%;height:100%;object-fit:cover;object-position:center 10%}
-.pill{position:absolute;background:#ffffff14;backdrop-filter:blur(10px);border:1px solid #ffffff22;padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700}
-.p1{top:30px;left:0} .p2{top:10px;right:20px} .p3{top:50%;left:-10px} .p4{top:50%;right:-5px} .p5{bottom:30px;left:50%;transform:translateX(-50%)}
-.h-right h1{font-size:50px;font-weight:800;line-height:0.9}
-@media(min-width:900px){.h-right h1{font-size:68px}}
-.h-right h1 span{color:#a78bfa}
-.h-right p{margin-top:16px;color:#cbd5e1;font-size:16px;line-height:1.6;max-width:480px}
-.btns{margin-top:24px;display:flex;gap:12px}
-.b1{background:#fff;color:#0f0b1e;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:800;font-size:13px}
-.b2{border:1px solid #ffffff44;color:#fff;padding:13px 24px;border-radius:999px;text-decoration:none;font-weight:700;font-size:13px}
-section{padding:70px 24px} .container{max-width:1000px;margin:auto}
-.tt{font-size:30px;font-weight:800} .ss{color:#94a3b8;font-size:13px;margin:6px 0 18px}
-.card{background:#ffffff08;border:1px solid #ffffff12;border-radius:20px;padding:20px;margin-bottom:12px;backdrop-filter:blur(10px)}
-.tag{display:inline-block;background:#ffffff12;border:1px solid #ffffff14;padding:7px 14px;border-radius:999px;font-size:11px;font-weight:600;margin:4px}
-.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
-.track::-webkit-scrollbar{display:none}
-.proj{min-width:300px;flex:0 0 300px;background:#ffffff08;border:1px solid #ffffff12;border-radius:20px;padding:18px;scroll-snap-align:start}
-.proj img{width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:10px;background:#1e1b4b}
-a.link{color:#a78bfa;text-decoration:none;font-size:12px;font-weight:700}
-</style>
-</head>
-<body>
-<nav><div class="logo">SADHANA.<span>M</span></div><div class="nlinks"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav>
-
-<section class="hero" id="home">
-<div class="wrap">
-<div class="h-left">
-<div class="pill p1">☕ Java</div><div class="pill p2">🧠 AI</div><div class="pill p3">⟨⟩ DSA</div><div class="pill p4">🎨 Figma</div><div class="pill p5">🍃 Spring Boot</div>
-<div class="h-img"><img src="photo.jpg"></div>
-</div>
-<div class="h-right">
-<h1>SADHANA<br><span>MANIKANDAN</span></h1>
-<p><b>BCA Student</b> | Java • DSA • AI • Spring Boot • Figma<br>Building clean, user-focused digital experiences.</p>
-<div class="btns"><a href="#projects" class="b1">VIEW PROJECTS →</a><a href="#" class="b2">↓ DOWNLOAD CV</a></div>
-</div>
-</div>
-</section>
-
-<section id="about"><div class="container"><div class="tt">About Me</div><div class="ss">Who I am</div>
-<div class="card"><p style="line-height:1.7;color:#e2e8f0;font-size:14px">Hi, I'm Sadhana Manikandan, a passionate BCA student from Palakkodu. I love creating beautiful UI designs in Figma and building powerful backend with Java & Spring Boot. Always curious to learn AI & DSA.</p></div></div></section>
-
-<section id="education" style="background:#0f0b1e"><div class="container"><div class="tt">Education</div><div class="ss">Academic journey</div>
-<div class="card"><b>🎓 BCA - Bachelor of Computer Applications</b><p style="font-size:13px;color:#94a3b8;margin-top:4px">Current | 3rd Year | Palakkodu</p></div>
-<div class="card"><b>🏫 12th Standard - 95%</b><p style="font-size:13px;color:#94a3b8;margin-top:4px">Top Scorer | State Board | 2023</p></div>
-<div class="card"><b>🏫 10th Standard - 78%</b><p style="font-size:13px;color:#94a3b8;margin-top:4px">State Board | 2021</p></div>
-<div class="card"><b>🤖 AI Training - ET102696</b><p style="font-size:13px;color:#94a3b8;margin-top:4px">Euclid AI Training Program | Certified</p></div>
-</div></section>
-
-<section id="skills"><div class="container"><div class="tt">Skills</div><div class="ss">What I know</div>
-<div class="card"><span class="tag">☕ Java</span><span class="tag">⚙️ OOP</span><span class="tag">🍃 Spring Boot</span><span class="tag">🧠 AI</span><span class="tag">🎨 Figma</span><span class="tag">📱 UI/UX</span><span class="tag">⟨⟩ DSA</span><span class="tag">💾 MySQL</span><span class="tag">💻 HTML/CSS/JS</span></div></div></section>
-
-<section id="experience" style="background:#0f0b1e"><div class="container"><div class="tt">Experience</div><div class="ss">Training & Internship</div>
-<div class="card"><b>💼 Euclid Technologies - Internship ET102697</b><p style="font-size:13px;color:#cbd5e1;margin-top:6px">Worked on industry-level projects, learned real-time development and teamwork.</p></div>
-<div class="card"><b>🧠 Euclid AI Training - ET102696</b><p style="font-size:13px;color:#cbd5e1;margin-top:6px">Completed AI fundamentals, hands-on training in AI tools and concepts.</p></div></div></section>
-
-<section id="projects"><div class="container"><div class="tt">Projects</div><div class="ss">Swipe → Figma prototypes</div>
-<div class="track">
-<div class="proj"><img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400"><b>🥤 Smoothie Shop App</b><p style="font-size:12px;color:#94a3b8;margin-top:6px">Fresh smoothie ordering app with colorful UI, menu & cart flow.</p><a href="https://www.figma.com/proto/luZX6MSg7E6JPEsEDM4Uy2/Smoothie-shop-By-Gokul?node-id=1-2&p=f&t=9Y1jxVqNzryFZKGO-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" target="_blank" class="link" style="display:inline-block;margin-top:10px;background:#a78bfa;color:#0f0b1e;padding:6px 14px;border-radius:999px">🔗 View Prototype</a></div>
-<div class="proj"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"><b>👟 Shoe Shop App</b><p style="font-size:12px;color:#94a3b8;margin-top:6px">Modern shoe shopping app with product listing, details & checkout.</p><a href="https://www.figma.com/proto/IVoaDf6uebVpOV52n1dS3X/Shoe-shop-by-Gokul?node-id=1-2&p=f&t=NVqT19TY3t49WNbK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" target="_blank" class="link" style="display:inline-block;margin-top:10px;background:#a78bfa;color:#0f0b1e;padding:6px 14px;border-radius:999px">🔗 View Prototype</a></div>
-</div></div></section>
-
-<section id="contact" style="background:#0f0b1e;border-top:1px solid #ffffff12"><div class="container"><div class="tt">Contact</div><div class="ss">Let's Connect</div>
-<div class="card"><p style="color:#cbd5e1">📧 sadhana@email.com<br>📍 Palakkodu, Tamil Nadu<br><br><a href="https://linkedin.com" target="_blank" style="color:#a78bfa;text-decoration:none">🔗 LinkedIn</a> | <a href="#" style="color:#a78bfa;text-decoration:none">📸 Instagram</a></p>
-<div style="margin-top:16px"><a href="mailto:sadhana@email.com" class="b1" style="display:inline-block">Let's Connect →</a></div></div>
-<p style="text-align:center;color:#475569;font-size:11px;margin-top:30px">Made with ❤️ by Sadhana M - 2026</p></div></section>
-</body></html>
+- Navigation: About | Education | Experience | Projects | Contact
+- Hero: Sadhana circular photo + pills Java AI DSA Figma Spring Boot
+- About Me: 3rd Year BCA Hindustan College Coimbatore
+- Education: Hindustan Coimbatore BCA, Holy Cross Hosur 10th 78% 12th 95%
+- Experience: AI Training ET102696 & Internship ET102697 Euclid Coimbatore
+- Projects:
+    * Smoothie Shop → View Design link: un link
+    * Shoe Shop → View Design link: un link
+- Footer: Based in Coimbatore + Sadhanaamani87@gmail.com
