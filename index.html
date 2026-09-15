@@ -3,120 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sadhana Manikandan | Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<title>Sadhana Manikandan</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#EAF6FF;color:#0A1931;scroll-behavior:smooth}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:#ffffffcc;backdrop-filter:blur(10px);position:sticky;top:0;z-index:99;border-bottom:1px solid #D6E8FF}
-.logo{font-weight:800;font-size:22px}.logo span{color:#1565C0}
-.navlinks{display:flex;gap:22px;align-items:center}
-.navlinks a{color:#2b2b2b;text-decoration:none;font-weight:500;font-size:14px}
-.btn-blue{background:#1565C0;color:white!important;padding:10px 18px;border-radius:10px;font-weight:700}
-.hero{display:flex;justify-content:space-between;align-items:center;padding:70px 80px;background:linear-gradient(135deg,#E3F2FD,#F0F8FF);min-height:85vh}
-.hero-left{max-width:52%}
-.hero-left h1{font-size:52px;line-height:1;font-weight:800}
-.hero-left h2{color:#1565C0;font-size:28px;margin-top:8px}
-.hero-left p{margin:18px 0;color:#444;line-height:1.7;font-size:16px}
-.btns{display:flex;gap:12px;margin:22px 0;flex-wrap:wrap}
-.btn-primary{background:#1565C0;color:white;padding:14px 26px;border-radius:12px;text-decoration:none;font-weight:800}
-.btn-outline{border:2px solid #0A1931;color:#0A1931;padding:12px 26px;border-radius:12px;text-decoration:none;font-weight:800}
-.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-.pill{background:white;padding:9px 16px;border-radius:999px;font-weight:700;font-size:13px;border:1px solid #C8E1FF;box-shadow:0 4px 10px rgba(0,0,0,0.05)}
-.hero-right img{width:360px;height:360px;border-radius:50%;object-fit:cover;border:10px solid white;box-shadow:0 30px 60px rgba(21,101,192,0.25)}
-.about{background:white;padding:30px 80px}
-.about h3{border-bottom:3px solid #1565C0;display:inline-block;padding-bottom:4px}
-.about p{margin-top:12px;line-height:1.7;color:#333}
-.grid{background:#D9ECFF;padding:30px 80px;display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:20px}
-.card{background:white;border-radius:20px;padding:22px;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
-.card h3{margin-bottom:14px;color:#0A1931}
-.card small{color:#555}
-.project-card{border:1px solid #D6E8FF;border-radius:16px;overflow:hidden;background:white}
-.project-card img{width:100%;height:140px;object-fit:cover}
-.project-card .info{padding:14px}
-.view{color:#1565C0;font-weight:800;text-decoration:none;display:block;text-align:center;margin-top:10px;border:1px solid #C8E1FF;padding:8px;border-radius:10px}
-.contact{background:#0A2A5E;color:white;padding:22px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.contact a{color:white;text-decoration:none}
-footer{background:#061A3A;color:#9AB6DE;text-align:center;padding:10px;font-size:12px}
-@media(max-width:900px){.hero{flex-direction:column;padding:30px 20px}.hero-left{max-width:100%}.hero-right img{width:280px;height:280px;margin-top:20px}.grid{grid-template-columns:1fr;padding:20px}.about{padding:20px}.navlinks{display:none}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#f8fbff;color:#0f172a;scroll-behavior:smooth}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8f0}
+.logo{font-weight:800}.logo span{color:#2563eb}
+.nav-links{display:flex;gap:10px;font-size:11px;font-weight:600;overflow-x:auto}
+.nav-links a{text-decoration:none;color:#334155;white-space:nowrap}
+section{padding:90px 20px 40px}
+.container{max-width:1000px;margin:0 auto}
+.hero{display:flex;flex-direction:column;gap:24px}
+@media(min-width:800px){.hero{flex-direction:row;align-items:center;justify-content:space-between}}
+.hero-text h1{font-size:42px;font-weight:800;line-height:1.1}
+@media(min-width:800px){.hero-text h1{font-size:56px}}
+.hero-text h1 span{color:#2563eb}
+.hero-text p{margin-top:12px;color:#475569;line-height:1.6}
+.hero-img{width:280px;height:280px;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 16px 40px rgba(37,99,235,0.18);margin:0 auto}
+@media(min-width:800px){.hero-img{width:360px;height:360px}}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 12%}
+.section-title{font-size:28px;font-weight:800;margin-bottom:4px}
+.section-sub{color:#64748b;font-size:13px;margin-bottom:18px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:20px;margin-bottom:12px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.skill-tag{background:#fff;border:1px solid #e2e8f0;padding:8px 16px;border-radius:999px;font-weight:600;font-size:12px}
+.timeline{border-left:2px solid #e2e8f0;padding-left:20px;margin-left:6px}
+.timeline-item{position:relative;margin-bottom:22px}
+.timeline-item::before{content:'';position:absolute;left:-27px;top:4px;width:12px;height:12px;background:#2563eb;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #2563eb}
+.project-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 2px 20px}
+.project-track::-webkit-scrollbar{display:none}
+.proj{min-width:280px;flex:0 0 280px;background:#fff;border-radius:18px;padding:18px;border:1px solid #e2e8f0;scroll-snap-align:start}
+.contact-box{background:#0f172a;color:#fff;border-radius:20px;padding:28px}
+.reveal{opacity:0;transform:translateY(20px);transition:.6s}
+.reveal.active{opacity:1;transform:translateY(0)}
+.btn-primary{background:#2563eb;color:#fff;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:700;font-size:13px}
 </style>
 </head>
 <body>
 <nav>
-<div class="logo">SADHANA<span>.M</span>ANIKANDAN</div>
-<div class="navlinks">
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#experience">Experience</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-<a class="btn-blue" href="cv.pdf" download>Download CV</a>
+<div class="logo">SADHANA.<span>M</span></div>
+<div class="nav-links">
+<a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
 </div>
 </nav>
-<div class="hero">
-<div class="hero-left">
-<h1>SADHANA MANIKANDAN</h1>
-<h2>3rd Year BCA Student</h2>
-<p>Passionate BCA student specializing in Java, AI, and UI/Design. I build clean, user-focused solutions and love problem-solving through code & design. Open to internships & collaborations.</p>
-<div class="btns">
-<a class="btn-primary" href="#projects">VIEW PROJECTS →</a>
-<a class="btn-outline" href="cv.pdf" download>↓ DOWNLOAD CV</a>
+
+<section id="home" style="padding-top:110px">
+<div class="container hero">
+<div class="hero-text">
+<h1>SADHANA.<br><span>MANIKANDAN</span></h1>
+<p>3rd Year BCA Student | Java Developer | AI Enthusiast | UI/UX Designer.</p>
+<div style="margin-top:20px"><a href="#projects" class="btn-primary">VIEW PROJECTS →</a></div>
 </div>
-<div class="pills">
-<span class="pill">☕ Java</span>
-<span class="pill">🧠 AI</span>
-<span class="pill">⟨⟩ DSA</span>
-<span class="pill">🎨 Figma</span>
-<span class="pill">🍃 Spring Boot</span>
+<div class="hero-img"><img src="photo.jpg" alt="Sadhana"></div>
 </div>
+</section>
+
+<section id="about"><div class="container reveal">
+<div class="section-title">About Me</div><div class="section-sub">Who I am</div>
+<div class="card"><p style="line-height:1.7;color:#334155">Hi, I'm <b>Sadhana Manikandan</b> from Palakkodu. BCA 3rd Year student. Passionate about coding, problem-solving, and designing beautiful interfaces. Goal is to become a full-stack developer with AI knowledge.</p></div>
+</div></section>
+
+<section id="education" style="background:#fff"><div class="container reveal">
+<div class="section-title">Education</div><div class="section-sub">My academic journey</div>
+<div class="card"><h3>🎓 BCA - Bachelor of Computer Applications</h3><p style="color:#64748b;font-size:13px;margin-top:6px">2023-2026 | 3rd Year | CGPA: 8.5</p></div>
+<div class="card"><h3>🏫 Higher Secondary (12th)</h3><p style="color:#64748b;font-size:13px;margin-top:6px">2022-2023 | Bio-Maths | 85%</p></div>
+</div></section>
+
+<section id="skills"><div class="container reveal">
+<div class="section-title">Skills</div><div class="section-sub">Technologies I work with</div>
+<div class="card"><h4>Programming</h4><div class="skill-tags"><span class="skill-tag">☕ Java</span><span class="skill-tag">🐍 Python</span><span class="skill-tag">⟨⟩ DSA</span><span class="skill-tag">💾 MySQL</span><span class="skill-tag">💻 HTML/CSS/JS</span></div>
+<h4 style="margin-top:16px">Frameworks</h4><div class="skill-tags"><span class="skill-tag">🍃 Spring Boot</span><span class="skill-tag">🤖 AI/ML</span><span class="skill-tag">🎨 Figma</span><span class="skill-tag">🔧 GitHub</span></div></div>
+</div></section>
+
+<section id="experience" style="background:#fff"><div class="container reveal">
+<div class="section-title">Experience</div><div class="section-sub">Where I've learned</div>
+<div class="card"><div class="timeline">
+<div class="timeline-item"><h4>UI/UX Design Intern</h4><p style="font-size:13px;color:#2563eb;font-weight:600">Self Project | 2025</p><p style="font-size:13px;color:#475569;margin-top:4px">Designed 10+ app & web interfaces in Figma.</p></div>
+<div class="timeline-item"><h4>Java Development</h4><p style="font-size:13px;color:#2563eb;font-weight:600">2024-Present</p><p style="font-size:13px;color:#475569;margin-top:4px">Building backend projects with Spring Boot & solving DSA.</p></div>
+</div></div>
+</div></section>
+
+<section id="projects"><div class="container reveal">
+<div class="section-title">Projects</div><div class="section-sub">Swipe → slide effect</div>
+<div class="project-track">
+<div class="proj"><h3>🌱 Smart Plant Care</h3><p style="font-size:13px;color:#64748b;margin-top:6px">AI plant disease detection using TensorFlow.</p></div>
+<div class="proj"><h3>☕ Billing System</h3><p style="font-size:13px;color:#64748b;margin-top:6px">Java Swing + MySQL inventory system.</p></div>
+<div class="proj"><h3>📚 Student Portal</h3><p style="font-size:13px;color:#64748b;margin-top:6px">Spring Boot + MySQL portal.</p></div>
+<div class="proj"><h3>🎨 Portfolio</h3><p style="font-size:13px;color:#64748b;margin-top:6px">This sliding portfolio website.</p></div>
 </div>
-<div class="hero-right">
-<img src="photo.jpg" alt="Sadhana" onerror="this.src='https://via.placeholder.com/360?text=Sadhana+Photo'">
-</div>
-</div>
-<div id="about" class="about">
-<h3>About Me</h3>
-<p>Hello! I'm Sadhana M, a 3rd Year BCA student at Hindustan College, Coimbatore. I'm passionate about software development, Java, AI, DSA and UI/UX design with Figma. I enjoy building real-world projects, learning new technologies, and creating clean, user-friendly applications. My goal is to become a skilled Full-Stack Developer & AI enthusiast.</p>
-<p><b>Location:</b> Coimbatore, Tamil Nadu | <b>Email:</b> Sadhanaamani87@gmail.com | <b>Skills:</b> Java, OOP, Spring Boot, DSA, Problem Solving, Team Management, AI, Figma</p>
-</div>
-<div class="grid">
-<div id="education" class="card">
-<h3>🎓 Education</h3>
-<p><b>Hindustan College, Coimbatore</b><br>BCA - 3rd Year<br><small>2023-2026 (Currently pursuing)</small></p><br>
-<p><b>Holy Cross Matric Hr Sec School, Hosur</b><br>• 12th - 95% (2023-24)<br>• 10th - 78% (2021-22)</p>
-</div>
-<div id="experience" class="card">
-<h3>💼 Experience</h3>
-<p><b>AI Training — ET102696</b><br><small>Euclid Technologies, Coimbatore • 15 Jan - 15 Feb 2026</small><br>Hands-on AI/ML training, data processing, prompt engineering.</p><br>
-<p><b>AI Internship — ET102697</b><br><small>Euclid Technologies, Coimbatore • 15 Feb - 30 Mar 2026</small><br>Java/Spring Boot, REST API, DB integration, AI tools.</p>
-</div>
-<div id="projects" class="card">
-<h3>🗂️ Projects</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-<div class="project-card">
-<img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500" alt="Smoothie">
-<div class="info">
-<b>Smoothie Shop Website</b>
-<p style="font-size:13px;margin-top:4px;color:#444">Modern UI/UX for smoothie shop with catalog, cart, responsive landing page.</p>
-<a class="view" href="https://www.figma.com/proto/luZX6MSg7E6JPEsEDM4Uy2/Smoothie-shop-By-Gokul?node-id=1-2&p=f&t=9Y1jxVqNzryFZKGO-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" target="_blank">View Design →</a>
-</div>
-</div>
-<div class="project-card">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Shoe">
-<div class="info">
-<b>Shoe Shop Website</b>
-<p style="font-size:13px;margin-top:4px;color:#444">Figma E-commerce with listing, cart, checkout, clean layout.</p>
-<a class="view" href="https://www.figma.com/proto/IVoaDf6uebVpOV52n1dS3X/Shoe-shop-by-Gokul?node-id=1-2&p=f&t=NVqT19TY3t49WNbK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" target="_blank">View Design →</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="contact" class="contact">
-<div>📍 Based in Coimbatore, Tamil Nadu</div>
-<div>✉️ <a href="mailto:Sadhanaamani87@gmail.com">Sadhanaamani87@gmail.com</a></div>
-<div>🔗 <a href="https://linkedin.com/in/sadhana-manikandan" target="_blank">linkedin.com/in/sadhana-manikandan</a></div>
-</div>
-<footer>© 2024 SADHANA MANIKANDAN • Built with passion • Designed in Figma</footer>
+</div></section>
+
+<section id="contact" style="background:#fff"><div class="container reveal">
+<div class="section-title">Contact</div><div class="section-sub">Let's connect</div>
+<div class="contact-box"><div><h3>Have a project in mind?</h3><p style="color:#94a3b8;font-size:13px;margin-top:6px">Open for internships & freelance.</p></div><div style="margin-top:12px"><a href="mailto:sadhana@email.com" style="color:#fff;text-decoration:none;background:#2563eb;padding:10px 18px;border-radius:999px;font-weight:700;font-size:13px">📧 Email Me</a></div></div>
+</div></section>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const onScroll=()=>{reveals.forEach(r=>{if(r.getBoundingClientRect().top < innerHeight-80) r.classList.add('active')})};
+addEventListener('scroll',onScroll);onScroll();
+</script>
 </body>
   </html>
