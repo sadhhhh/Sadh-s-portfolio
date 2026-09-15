@@ -3,62 +3,1418 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sadhana Manikandan - Portfolio</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<title>Sadhana Manikandan | BCA Student</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-/* Unga old style same than ma */
-body{background:#080808;color:#fff;font-family:Poppins,sans-serif}
-.btn{background:#ff004f;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:10px}
-.btn2{background:#ff004f}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:#fdf6f0;
+    color:#2d2a26;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 5%;
+    background:rgba(253,246,240,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid #e8ddd4;
+}
+
+.logo{
+    font-size:17px;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:#8a9a8a;
+}
+
+.nlinks{
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+
+.nlinks a{
+    text-decoration:none;
+    color:#5c5753;
+    font-size:11px;
+    font-weight:700;
+    padding:8px 12px;
+    border-radius:999px;
+    transition:.3s;
+}
+
+.nlinks a:hover,
+.nlinks a.active{
+    background:#2d2a26;
+    color:white;
+    transform:translateY(-2px);
+}
+
+/* ================= COMMON ================= */
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1050px;
+    margin:auto;
+}
+
+.tt{
+    font-size:30px;
+    font-weight:800;
+}
+
+.ss{
+    font-size:11px;
+    color:#8a807a;
+    margin:6px 0 20px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e8ddd4;
+    border-radius:20px;
+    padding:22px;
+    margin-bottom:14px;
+    box-shadow:0 8px 24px #00000008;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px #00000012;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:120px 20px 60px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        180deg,
+        #fdf6f0 0%,
+        #efe6f5 50%,
+        #fdf6f0 100%
+    );
+}
+
+.hero-wrap{
+    display:flex;
+    flex-direction:column;
+    gap:45px;
+    align-items:center;
+}
+
+@media(min-width:900px){
+
+    .hero-wrap{
+        flex-direction:row;
+        justify-content:space-between;
+    }
+
+}
+
+/* ================= PHOTO AREA ================= */
+
+.hleft{
+    position:relative;
+    width:400px;
+    height:500px;
+    flex-shrink:0;
+}
+
+/* pastel blob */
+
+.blob{
+    position:absolute;
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:380px;
+    height:460px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #c8d5c8,
+        #e8ddd4,
+        #d5c8e8
+    );
+
+    border-radius:40px;
+
+    animation:blob 6s infinite alternate;
+}
+
+@keyframes blob{
+
+    0%{
+        border-radius:30px 50px 40px 60px;
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+
+    100%{
+        border-radius:50px 30px 60px 40px;
+        transform:translate(-50%,-50%) rotate(3deg);
+    }
+
+}
+
+/* photo */
+
+.full-img{
+    position:absolute;
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:350px;
+    height:455px;
+
+    border-radius:24px;
+    overflow:hidden;
+
+    border:6px solid white;
+
+    box-shadow:0 25px 60px #00000018;
+
+    animation:float 4s ease-in-out infinite;
+
+    z-index:2;
+}
+
+.full-img img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:top center;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translate(-50%,-52%);
+    }
+
+    50%{
+        transform:translate(-50%,-48%);
+    }
+
+}
+
+/* ================= FLOATING SKILLS ================= */
+
+.java-anim{
+
+    position:absolute;
+
+    background:white;
+
+    border:1px solid #e8ddd4;
+
+    padding:10px 17px;
+
+    border-radius:999px;
+
+    font-size:11px;
+    font-weight:800;
+
+    box-shadow:0 10px 25px #00000012;
+
+    animation:orbit 10s linear infinite;
+
+    z-index:5;
+
+    white-space:nowrap;
+
+    transition:.3s;
+}
+
+.java-anim:hover{
+    background:#2d2a26;
+    color:white;
+    transform:scale(1.1);
+}
+
+@keyframes orbit{
+
+    0%{
+        transform:
+        rotate(0deg)
+        translateX(210px)
+        rotate(0deg);
+    }
+
+    100%{
+        transform:
+        rotate(360deg)
+        translateX(210px)
+        rotate(-360deg);
+    }
+
+}
+
+.j1{
+    top:50%;
+    left:50%;
+    animation-delay:0s;
+}
+
+.j2{
+    top:50%;
+    left:50%;
+    animation-delay:-2.5s;
+}
+
+.j3{
+    top:50%;
+    left:50%;
+    animation-delay:-5s;
+}
+
+.j4{
+    top:50%;
+    left:50%;
+    animation-delay:-7.5s;
+}
+
+/* ================= HERO TEXT ================= */
+
+.hero h1{
+
+    font-size:clamp(42px,7vw,70px);
+
+    font-weight:800;
+
+    line-height:.92;
+
+    letter-spacing:-2px;
+
+}
+
+.hero-text{
+
+    margin-top:18px;
+
+    color:#5c5753;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+.hero-buttons{
+
+    margin-top:22px;
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#2d2a26;
+
+    color:white;
+
+    padding:13px 20px;
+
+    border-radius:999px;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px) scale(1.04);
+
+    box-shadow:0 12px 25px #00000020;
+
+}
+
+.btn2{
+
+    background:white;
+
+    color:#2d2a26;
+
+    border:1px solid #e8ddd4;
+
+}
+
+/* ================= ABOUT ================= */
+
+.about-text{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:#3d3935;
+
+}
+
+/* ================= ALTERNATE SECTION ================= */
+
+.alt{
+    background:#f5efe8;
+}
+
+/* ================= EDUCATION ================= */
+
+.edu-title{
+
+    font-size:14px;
+
+    font-weight:800;
+
+}
+
+.edu-text{
+
+    font-size:12px;
+
+    color:#8a807a;
+
+    margin-top:6px;
+
+    line-height:1.6;
+
+}
+
+/* ================= SKILLS ================= */
+
+.tag{
+
+    display:inline-block;
+
+    background:#f5efe8;
+
+    border:1px solid #e8ddd4;
+
+    padding:7px 14px;
+
+    border-radius:999px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    margin:4px;
+
+    transition:.3s;
+
+}
+
+.tag:hover{
+
+    background:#2d2a26;
+
+    color:white;
+
+    transform:translateY(-3px) scale(1.05);
+
+}
+
+/* ================= PROJECTS ================= */
+
+.track{
+
+    display:flex;
+
+    gap:16px;
+
+    overflow-x:auto;
+
+    padding:8px 2px 18px;
+
+    scroll-behavior:smooth;
+
+}
+
+.track::-webkit-scrollbar{
+    height:5px;
+}
+
+.track::-webkit-scrollbar-thumb{
+
+    background:#cfc3ba;
+
+    border-radius:10px;
+
+}
+
+.proj{
+
+    min-width:300px;
+
+    flex:0 0 300px;
+
+    background:white;
+
+    border:1px solid #e8ddd4;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    transition:.4s;
+
+}
+
+.proj:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:0 20px 40px #00000012;
+
+}
+
+.proj h3{
+
+    font-size:15px;
+
+}
+
+.proj p{
+
+    font-size:12px;
+
+    color:#8a807a;
+
+    margin-top:8px;
+
+    line-height:1.6;
+
+}
+
+.project-btn{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    background:#2d2a26;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:10px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+
+    background:#2d2a26;
+
+    color:white;
+
+}
+
+.contact .ss{
+
+    color:#c4b8b0;
+
+}
+
+.contact-card{
+
+    background:#3a3530;
+
+    border:1px solid #4a4440;
+
+}
+
+.contact-info{
+
+    color:#e8ddd4;
+
+    font-size:13px;
+
+    line-height:2;
+
+}
+
+.contact-link{
+
+    color:#e8ddd4;
+
+    text-decoration:none;
+
+}
+
+.contact-link:hover{
+
+    text-decoration:underline;
+
+}
+
+.footer{
+
+    text-align:center;
+
+    color:#8a807a;
+
+    font-size:11px;
+
+    margin-top:30px;
+
+}
+
+/* ================= FADE ANIMATION ================= */
+
+.fade{
+
+    animation:fadeIn .9s ease both;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    nav{
+
+        padding:12px 14px;
+
+    }
+
+    .logo{
+
+        font-size:14px;
+
+    }
+
+    .nlinks{
+
+        display:none;
+
+    }
+
+    section{
+
+        padding:75px 16px;
+
+    }
+
+    .hero{
+
+        padding-top:100px;
+
+    }
+
+    .hero-wrap{
+
+        gap:30px;
+
+    }
+
+    .hleft{
+
+        width:320px;
+
+        height:410px;
+
+    }
+
+    .blob{
+
+        width:300px;
+
+        height:370px;
+
+    }
+
+    .full-img{
+
+        width:280px;
+
+        height:370px;
+
+    }
+
+    .java-anim{
+
+        font-size:8px;
+
+        padding:7px 11px;
+
+    }
+
+    .hero h1{
+
+        font-size:43px;
+
+    }
+
+    .hero-text{
+
+        font-size:13px;
+
+    }
+
+    .tt{
+
+        font-size:26px;
+
+    }
+
+    .proj{
+
+        min-width:270px;
+
+        flex-basis:270px;
+
+    }
+
+}
+
+/* ================= ACCESSIBILITY ================= */
+
+a:focus-visible{
+
+    outline:2px solid #8a9a8a;
+
+    outline-offset:3px;
+
+}
+
 </style>
 </head>
+
+
 <body>
 
-<!-- HERO SECTION -->
-<div class="hero">
-  <h1>Hi, I'm <span style="color:#ff004f">Sadhana Manikandan</span></h1>
-  <p>Final Year BCA | Bangalore</p>
-  <p>9363299533 | sadhanaamani87@gmail.com</p>
-  
-  <!-- DOWNLOAD CV BUTTON - FIXED -->
-  <a onclick="downloadCV()" class="btn btn2" style="cursor:pointer">⬇️ DOWNLOAD CV</a>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        SADHANA.<span>M</span>
+    </div>
+
+    <div class="nlinks">
+
+        <a href="#home" class="active">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#edu">Education</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#exp">Experience</a>
+
+        <a href="#proj">Projects</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="container hero-wrap">
+
+
+    <!-- PHOTO + FLOATING SKILLS -->
+
+    <div class="hleft">
+
+        <div class="blob"></div>
+
+
+        <!-- ONLY THESE 4 FLOATING TEXTS -->
+
+        <div class="java-anim j1">
+            ☕ Java
+        </div>
+
+        <div class="java-anim j2">
+            ⟨⟩ DSA
+        </div>
+
+        <div class="java-anim j3">
+            🐍 Python
+        </div>
+
+        <div class="java-anim j4">
+            🎨 Figma
+        </div>
+
+
+        <div class="full-img">
+
+            <img
+                src="photo.jpg"
+                alt="Sadhana Manikandan">
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="fade">
+
+        <h1>
+            SADHANA<br>
+            MANIKANDAN
+        </h1>
+
+
+        <p class="hero-text">
+
+            <b>3rd Year BCA Student</b>
+            <br>
+
+            Java • DSA • Python • HTML/CSS • Figma • AI
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#proj"
+                class="btn">
+                VIEW PROJECTS →
+            </a>
+
+
+            <a
+                href="Sadhana_Manikandan_CV.pdf"
+                download="Sadhana_Manikandan_CV.pdf"
+                class="btn btn2">
+                ↓ DOWNLOAD CV
+            </a>
+
+        </div>
+
+    </div>
+
+
 </div>
 
-<!-- ABOUT, SKILLS, PROJECTS ellam same -->
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+    <div class="tt">
+        About Me
+    </div>
+
+    <div class="ss">
+        BCA Student • Developer • UI/UX Enthusiast
+    </div>
+
+
+    <div class="card">
+
+        <p class="about-text">
+
+            Hello! I'm
+            <b>Sadhana Manikandan</b>,
+            a 3rd Year
+            <b>BCA student</b>
+            at
+            <b>Hindustan College of Arts and Science, Coimbatore</b>.
+
+            <br><br>
+
+            I am passionate about programming, application development
+            and creative UI/UX design. I enjoy working with
+            <b>Java, DSA, Python, HTML/CSS, Figma and AI</b>.
+
+            <br><br>
+
+            My goal is to become a skilled
+            <b>full-stack developer</b>
+            and build useful, user-friendly digital solutions.
+
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="edu" class="alt">
+
+<div class="container">
+
+    <div class="tt">
+        Education
+    </div>
+
+    <div class="ss">
+        Academic Journey
+    </div>
+
+
+    <div class="card">
+
+        <div class="edu-title">
+            🎓 BCA — Hindustan College of Arts and Science
+        </div>
+
+        <div class="edu-text">
+            Coimbatore • 3rd Year • CGPA: 8.5
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="edu-title">
+            🏫 Higher Secondary — Holy Cross Matric Higher Secondary School
+        </div>
+
+        <div class="edu-text">
+            Hosur, Tamil Nadu • State Board • 2023
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="edu-title">
+            🏫 SSLC — Holy Cross Matric Higher Secondary School
+        </div>
+
+        <div class="edu-text">
+            Hosur, Tamil Nadu • State Board • 2021
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="edu-title">
+            🤖 AI Training — Euclid AI
+        </div>
+
+        <div class="edu-text">
+            AI fundamentals, practical learning and project-based training.
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<div class="container">
+
+    <div class="tt">
+        Skills
+    </div>
+
+    <div class="ss">
+        Technologies & Tools
+    </div>
+
+
+    <div class="card">
+
+        <span class="tag">☕ Java</span>
+
+        <span class="tag">⟨⟩ DSA</span>
+
+        <span class="tag">⚙️ OOP</span>
+
+        <span class="tag">🐍 Python</span>
+
+        <span class="tag">💻 HTML</span>
+
+        <span class="tag">🎨 CSS</span>
+
+        <span class="tag">⚡ JavaScript</span>
+
+        <span class="tag">🍃 Spring Boot</span>
+
+        <span class="tag">💾 MySQL</span>
+
+        <span class="tag">🎨 Figma</span>
+
+        <span class="tag">📱 UI/UX</span>
+
+        <span class="tag">🧠 AI</span>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="exp" class="alt">
+
+<div class="container">
+
+    <div class="tt">
+        Experience
+    </div>
+
+    <div class="ss">
+        Training & Internship
+    </div>
+
+
+    <div class="card">
+
+        <div class="edu-title">
+            🧠 AI Training — Euclid AI
+        </div>
+
+        <p style="
+            font-size:13px;
+            color:#5c5753;
+            margin-top:8px;
+            line-height:1.7;
+        ">
+
+            Completed AI-focused training with exposure to
+            AI fundamentals, practical concepts and project-based learning.
+
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="edu-title">
+            💼 Internship — Euclid Technologies
+        </div>
+
+        <p style="
+            font-size:13px;
+            color:#5c5753;
+            margin-top:8px;
+            line-height:1.7;
+        ">
+
+            Industry-oriented internship experience involving
+            project development, teamwork and practical technology exposure.
+
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="proj">
+
+<div class="container">
+
+    <div class="tt">
+        Projects
+    </div>
+
+    <div class="ss">
+        UI/UX & Application Projects
+    </div>
+
+
+    <div class="track">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="proj">
+
+            <h3>
+                🥤 Smoothie Shop App
+            </h3>
+
+            <p>
+
+                A modern smoothie ordering application designed
+                in Figma with product browsing, cart and ordering flow.
+
+            </p>
+
+
+            <a
+                href="https://www.figma.com/proto/luZX6MSg7E6JPEsEDM4Uy2/Smoothie-shop-By-Gokul?node-id=1-2&p=f&t=9Y1jxVqNzryFZKGO-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-btn">
+
+                🔗 View Prototype
+
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="proj">
+
+            <h3>
+                👟 Shoe Shop App
+            </h3>
+
+            <p>
+
+                Modern shoe shopping application with product listing,
+                shopping experience and checkout flow.
+
+            </p>
+
+
+            <a
+                href="https://www.figma.com/proto/IVoaDf6uebVpOV52n1dS3X/Shoe-shop-by-Gokul?node-id=1-2&p=f&t=NVqT19TY3t49WNbK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-btn">
+
+                🔗 View Prototype
+
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="proj">
+
+            <h3>
+                🛰️ SatQuery AI
+            </h3>
+
+            <p>
+
+                An AI-based multimodal remote sensing assistant
+                designed to analyse satellite imagery using text
+                or voice queries.
+
+            </p>
+
+
+            <a
+                href="#contact"
+                class="project-btn">
+
+                🚀 Coming Soon
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+    <div class="tt">
+        Let's Connect
+    </div>
+
+    <div class="ss">
+        Contact Me
+    </div>
+
+
+    <div class="card contact-card">
+
+
+        <div class="contact-info">
+
+
+            📧
+
+            <a
+                href="mailto:sadhanaamani87@gmail.com"
+                class="contact-link">
+
+                sadhanaamani87@gmail.com
+
+            </a>
+
+            <br>
+
+
+            📱
+
+            <a
+                href="tel:+919363299533"
+                class="contact-link">
+
+                +91 9363299533
+
+            </a>
+
+            <br>
+
+
+            📍 Bangalore, Karnataka, India
+
+            <br>
+
+
+            🎓 Hindustan College of Arts and Science, Coimbatore
+
+            <br>
+
+
+            🔗
+
+            <a
+                href="https://www.linkedin.com/in/sadhana-mani-02295a41a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link">
+
+                LinkedIn Profile
+
+            </a>
+
+
+        </div>
+
+
+        <div style="
+            margin-top:18px;
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+        ">
+
+
+            <a
+                href="mailto:sadhanaamani87@gmail.com"
+                class="btn"
+                style="background:white;color:#2d2a26;">
+
+                Email Me →
+
+            </a>
+
+
+            <a
+                href="tel:+919363299533"
+                class="btn"
+                style="background:white;color:#2d2a26;">
+
+                Call Me →
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer">
+
+        Made with ❤️ by Sadhana Manikandan • 2026
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
-function downloadCV(){
- const { jsPDF } = window.jspdf;
- const doc = new jsPDF();
- doc.setFont("helvetica","bold"); doc.setFontSize(20);
- doc.text("SADHANA MANIKANDAN", 20, 20);
- doc.setFontSize(10); doc.setFont("helvetica","normal");
- doc.text("Final-Year BCA | +91-9363299533 | sadhanaamani87@gmail.com", 20, 28);
- doc.text("Bangalore | linkedin.com/in/sadhana-mani-02295a41a", 20, 34);
- doc.text("Portfolio: sadh-s-portfolio-46nh.vercel.app", 20, 40);
- doc.line(20,44,190,44);
- 
- doc.setFont("helvetica","bold"); doc.setFontSize(12); doc.text("EDUCATION",20,52);
- doc.setFont("helvetica","normal"); doc.setFontSize(10);
- doc.text("BCA - Hindustan College of Arts and Science, Coimbatore (2023-2026) - Final Year",20,58);
- doc.text("HSC - Holy Cross Matric Hr Sec School, Hosur - 95% Top Scorer (2022-2023)",20,64);
- doc.text("SSLC - Holy Cross Matric Hr Sec School, Hosur - 78% (2020-2021)",20,70);
- 
- doc.setFont("helvetica","bold"); doc.text("SKILLS",20,80);
- doc.setFont("helvetica","normal");
- doc.text("Java, OOP, Spring Boot, MySQL, HTML/CSS/JS, Figma, VS Code, Git",20,86);
- doc.text("DSA, AI, DBMS, Aptitude, Communication",20,92);
- 
- doc.setFont("helvetica","bold"); doc.text("TRAINING",20,102);
- doc.setFont("helvetica","normal");
- doc.text("Euclid Technical Training ET102696 / ET102697 - AI Training & Internship",20,108);
- 
- doc.setFont("helvetica","bold"); doc.text("PROJECTS",20,118);
- doc.setFont("helvetica","normal");
- doc.text("Smoothie App & Shoe Shopping App - Figma UI/UX prototypes",20,124);
- 
- doc.save("Sadhana_Manikandan_CV.pdf");
-}
+
+/* ACTIVE NAVIGATION */
+
+const navLinks =
+document.querySelectorAll(".nlinks a");
+
+const sections =
+document.querySelectorAll("section");
+
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 180;
+
+        if(window.scrollY >= sectionTop){
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(
+            link.getAttribute("href")
+            === "#" + current
+        ){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* NAVIGATION CLICK */
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", function(){
+
+        navLinks.forEach(item =>
+            item.classList.remove("active")
+        );
+
+        this.classList.add("active");
+
+    });
+
+});
+
 </script>
+
 </body>
-</html>
+  </html>
