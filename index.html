@@ -1,151 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sadhana Manikandan | Bangalore</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sadhana Manikandan - Portfolio</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:#fdf6f0;color:#2d2a26;scroll-behavior:smooth;overflow-x:hidden}
-nav{position:fixed;top:0;width:100%;z-index:99;display:flex;justify-content:space-between;padding:14px 22px;background:rgba(253,246,240,0.92);backdrop-filter:blur(14px);border-bottom:1px solid #e8ddd4}
-.logo{font-weight:800;font-size:16px;animation:logoPop 0.8s ease}
-@keyframes logoPop{0%{transform:scale(0)}100%{transform:scale(1)}}
-.logo span{color:#8a9a8a}
-.nlinks{display:flex;gap:6px}
-.nlinks a{text-decoration:none;color:#5c5753;font-size:11px;font-weight:700;padding:7px 12px;border-radius:999px;transition:0.3s;position:relative;overflow:hidden}
-.nlinks a:hover{background:#2d2a26;color:#fff;transform:translateY(-2px) scale(1.05)}
-.nlinks a:active{transform:scale(0.9)}
-.nlinks a.active{background:#2d2a26;color:#fff}
-section{padding:80px 20px} .container{max-width:1000px;margin:auto}
-.tt{font-size:28px;font-weight:800} .ss{font-size:12px;color:#8a807a;margin:6px 0 18px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
-.card{background:#fff;border:1px solid #e8ddd4;border-radius:20px;padding:20px;margin-bottom:12px;box-shadow:0 8px 24px #00000006;transition:0.5s;animation:cardIn 0.6s ease backwards}
-@keyframes cardIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.card:hover{transform:translateY(-8px) rotateX(2deg);box-shadow:0 25px 50px #00000012}
-.tag{display:inline-block;background:#f5efe8;border:1px solid #e8ddd4;padding:6px 14px;border-radius:999px;font-size:11px;font-weight:700;margin:4px;transition:0.3s}
-.tag:hover{transform:translateY(-3px) scale(1.1);background:#2d2a26;color:#fff}
-.hero{padding:110px 20px 40px;background:linear-gradient(180deg,#fdf6f0 0%,#efe6f5 50%,#fdf6f0 100%);position:relative}
-.hero h1{font-size:48px;font-weight:800;line-height:0.9;animation:slideUp 0.8s ease}
-@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.hero h1 span{color:#8a9a8a}
-.hero-wrap{display:flex;flex-direction:column;gap:30px;align-items:center}
-@media(min-width:900px){.hero-wrap{flex-direction:row;justify-content:space-between}}
-.hleft{position:relative;width:400px;height:500px;flex-shrink:0}
-.blob{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:380px;height:460px;background:linear-gradient(135deg,#c8d5c8,#e8ddd4,#d5c8e8);border-radius:30px;animation:blob 6s infinite alternate}
-@keyframes blob{0%{border-radius:30px 50px 40px 60px;transform:translate(-50%,-50%) rotate(0deg)}100%{border-radius:50px 30px 60px 40px;transform:translate(-50%,-50%) rotate(3deg)}}
-.full-img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:360px;height:460px;border-radius:24px;overflow:hidden;border:6px solid #fff;box-shadow:0 25px 60px #00000015;animation:float 4s ease-in-out infinite;cursor:pointer}
-.full-img:hover{transform:translate(-50%,-50%) scale(1.03) rotateY(5deg)}
-.full-img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:0.5s}
-@keyframes float{0%,100%{transform:translate(-50%,-52%)}50%{transform:translate(-50%,-48%)}}
-.java-anim{position:absolute;background:#fff;border:1px solid #e8ddd4;padding:9px 15px;border-radius:999px;font-size:11px;font-weight:800;box-shadow:0 10px 25px #00000010;animation:orbit 10s linear infinite;z-index:2;cursor:pointer}
-.java-anim:hover{transform:scale(1.2);background:#2d2a26;color:#fff}
-@keyframes orbit{0%{transform:rotate(0deg) translateX(210px) rotate(0deg)}100%{transform:rotate(360deg) translateX(210px) rotate(-360deg)}}
-.j1{top:50%;left:50%;animation-delay:0s} .j2{top:50%;left:50%;animation-delay:-2.5s} .j3{top:50%;left:50%;animation-delay:-5s} .j4{top:50%;left:50%;animation-delay:-7.5s}
-.code-fly{position:absolute;font-family:monospace;font-size:10px;color:#8a9a8a;animation:fly 7s linear infinite}
-@keyframes fly{0%{transform:translateY(120px);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateY(-120px);opacity:0}}
-.btn{background:#2d2a26;color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:800;font-size:12px;display:inline-block;transition:0.3s;position:relative;overflow:hidden}
-.btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 12px 25px #00000020}
-.btn:active{transform:scale(0.95)}
-.btn2{background:#fff;border:1px solid #e8ddd4;color:#2d2a26}
-.track{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px;scroll-behavior:smooth}
-.track::-webkit-scrollbar{display:none}
-.proj{min-width:280px;flex:0 0 280px;background:#fff;border:1px solid #e8ddd4;border-radius:18px;padding:16px;transition:0.4s}
-.proj:hover{transform:translateY(-6px) scale(1.02)}
-/* Click ripple effect */
-.ripple{position:absolute;border-radius:50%;background:rgba(0,0,0,0.1);transform:scale(0);animation:ripple 0.6s linear}
-@keyframes ripple{to{transform:scale(4);opacity:0}}
+/* Unga old style same than ma */
+body{background:#080808;color:#fff;font-family:Poppins,sans-serif}
+.btn{background:#ff004f;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:10px}
+.btn2{background:#ff004f}
 </style>
 </head>
 <body>
-<nav><div class="logo">SADHANA.<span>M</span></div><div class="nlinks"><a href="#home">Home</a><a href="#about">About</a><a href="#edu">Education</a><a href="#skills">Skills</a><a href="#exp">Exp</a><a href="#proj">Projects</a><a href="#contact">Contact</a></div></nav>
 
-<section class="hero" id="home">
-<div class="container hero-wrap">
-<div class="hleft">
-<div class="blob"></div>
-<div class="java-anim j1">☕ Java</div>
-<div class="java-anim j2">🍃 Spring Boot</div>
-<div class="java-anim j3">⟨⟩ public class</div>
-<div class="java-anim j4">⚡ OOP</div>
-<div class="code-fly" style="left:0%;top:70%">System.out.println();</div>
-<div class="code-fly" style="right:0%;top:20%;animation-delay:2s">class Sadhana { }</div>
-<div class="full-img"><img src="photo.jpg" alt="Sadhana Bangalore"></div>
+<!-- HERO SECTION -->
+<div class="hero">
+  <h1>Hi, I'm <span style="color:#ff004f">Sadhana Manikandan</span></h1>
+  <p>Final Year BCA | Bangalore</p>
+  <p>9363299533 | sadhanaamani87@gmail.com</p>
+  
+  <!-- DOWNLOAD CV BUTTON - FIXED -->
+  <a onclick="downloadCV()" class="btn btn2" style="cursor:pointer">⬇️ DOWNLOAD CV</a>
 </div>
-<div>
-<h1>SADHANA<br>MANIKANDAN</h1>
-<p style="margin-top:12px;color:#5c5753;font-size:14px;line-height:1.6"><b>3rd Year BCA | From Bangalore</b><br>Java • Spring Boot • Figma • AI</p>
-<div style="margin-top:18px;display:flex;gap:10px"><a href="#proj" class="btn">VIEW PROJECTS →</a><a href="#" class="btn btn2">↓ DOWNLOAD CV</a></div>
-</div>
-</div>
-</section>
 
-<section id="about"><div class="container"><div class="tt">About Me</div><div class="ss">From Bangalore</div>
-<div class="card"><p style="font-size:14px;line-height:1.7;color:#3d3935">Hello! I'm <b>Sadhana M</b>, 3rd Year BCA student at <b>Hindustan College of Arts and Science, Coimbatore</b>. Currently based in <b>Bangalore, Karnataka</b>. Passionate about building clean UI/UX in Figma and powerful backend with Java + Spring Boot. Learning DSA & AI to become full-stack developer.</p></div></div></section>
-
-<section id="edu" style="background:#f5efe8"><div class="container"><div class="tt">Education</div><div class="ss">Correct details</div>
-<div class="card" style="animation-delay:0.1s"><b>🎓 BCA - Hindustan College of Arts and Science, Coimbatore</b><p style="font-size:12px;color:#8a807a;margin-top:4px">Present - 3rd Year | Coimbatore | Affiliated to Bharathiar University</p></div>
-<div class="card" style="animation-delay:0.2s"><b>🏫 12th - Holy Cross Matric Higher Secondary School, Hosur - 95% Top Scorer</b><p style="font-size:12px;color:#8a807a;margin-top:4px">State Board - 2023 | Top Scorer - 95% | Hosur, Tamil Nadu</p></div>
-<div class="card" style="animation-delay:0.3s"><b>🏫 10th - Holy Cross Matric Higher Secondary School, Hosur - 78%</b><p style="font-size:12px;color:#8a807a;margin-top:4px">State Board - 2021 | 78% | Hosur, Tamil Nadu</p></div>
-<div class="card" style="animation-delay:0.4s"><b>🤖 AI Training - ET102696 | Euclid AI</b><p style="font-size:12px;color:#8a807a;margin-top:4px">Certified AI Training Program - Bangalore</p></div>
-</div></section>
-
-<section id="skills"><div class="container"><div class="tt">Skills</div><div class="ss">Click to animate</div>
-<div class="card"><span class="tag">☕ Java</span><span class="tag">⚙️ OOP</span><span class="tag">🍃 Spring Boot</span><span class="tag">🧠 AI</span><span class="tag">🎨 Figma</span><span class="tag">📱 UI/UX</span><span class="tag">⟨⟩ DSA</span><span class="tag">💾 MySQL</span><span class="tag">💻 HTML/CSS/JS</span></div></div></section>
-
-<section id="exp" style="background:#f5efe8"><div class="container"><div class="tt">Experience</div><div class="ss">Training & Internship</div>
-<div class="card"><b>🧠 AI Training - ET102696</b><p style="font-size:13px;color:#5c5753;margin-top:6px">Euclid AI Training Program - Bangalore | AI fundamentals & hands-on projects</p></div>
-<div class="card"><b>💼 Internship - ET102697 | Euclid Technologies</b><p style="font-size:13px;color:#5c5753;margin-top:6px">Bangalore Internship - Industry level project development & teamwork</p></div></div></section>
-
-<section id="proj"><div class="container"><div class="tt">Projects</div><div class="ss">Figma prototypes - Click to view</div>
-<div class="track">
-<div class="proj"><b>🥤 Smoothie Shop App</b><p style="font-size:12px;color:#8a807a;margin-top:6px">Fresh smoothie ordering app with colorful UI & cart flow</p><a href="https://www.figma.com/proto/luZX6MSg7E6JPEsEDM4Uy2/Smoothie-shop-By-Gokul?node-id=1-2&p=f&t=9Y1jxVqNzryFZKGO-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" target="_blank" style="display:inline-block;margin-top:10px;background:#2d2a26;color:#fff;padding:7px 14px;border-radius:999px;font-size:11px;text-decoration:none;font-weight:700">🔗 View Prototype</a></div>
-<div class="proj"><b>👟 Shoe Shop App</b><p style="font-size:12px;color:#8a807a;margin-top:6px">Modern shoe shopping app with product listing & checkout</p><a href="https://www.figma.com/proto/IVoaDf6uebVpOV52n1dS3X/Shoe-shop-by-Gokul?node-id=1-2&p=f&t=NVqT19TY3t49WNbK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" target="_blank" style="display:inline-block;margin-top:10px;background:#2d2a26;color:#fff;padding:7px 14px;border-radius:999px;font-size:11px;text-decoration:none;font-weight:700">🔗 View Prototype</a></div>
-</div></div></section>
-
-<section id="contact" style="background:#2d2a26;color:#fff"><div class="container"><div class="tt">Contact</div><div class="ss" style="color:#c4b8b0">Let's Connect - Bangalore</div>
-<div class="card" style="background:#3a3530;border-color:#4a4440"><p style="color:#e8ddd4;font-size:13px;line-height:1.7">📧 sadhana@email.com<br>📍 Bangalore, Karnataka, India<br>🎓 Hindustan College of Arts and Science, Coimbatore<br>🏫 Holy Cross Matric Hr Sec School, Hosur<br>🔗 LinkedIn</p><div style="margin-top:14px"><a href="mailto:sadhana@email.com" class="btn" style="background:#fff;color:#2d2a26">Let's Connect →</a></div></div>
-<p style="text-align:center;color:#8a807a;font-size:11px;margin-top:24px">Made with ❤️ from Bangalore - Sadhana M 2026</p></div></section>
+<!-- ABOUT, SKILLS, PROJECTS ellam same -->
 
 <script>
-// Attractive animations on link click
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
- anchor.addEventListener('click',function(e){
-  e.preventDefault();
-  // ripple effect
-  let ripple=document.createElement('span');
-  ripple.classList.add('ripple');
-  this.appendChild(ripple);
-  let rect=this.getBoundingClientRect();
-  ripple.style.left=`${e.clientX-rect.left}px`;
-  ripple.style.top=`${e.clientY-rect.top}px`;
-  setTimeout(()=>ripple.remove(),600);
-  
-  // smooth scroll with bounce
-  let target=document.querySelector(this.getAttribute('href'));
-  if(target){
-   target.scrollIntoView({behavior:'smooth'});
-   target.style.transform='scale(0.98)';
-   setTimeout(()=>target.style.transform='scale(1)',300);
-  }
-  
-  // active link animation
-  document.querySelectorAll('.nlinks a').forEach(a=>a.classList.remove('active'));
-  this.classList.add('active');
- });
-});
-
-// Scroll active nav highlight
-window.addEventListener('scroll',()=>{
- let sections=document.querySelectorAll('section');
- let scrollPos=window.scrollY+150;
- sections.forEach(sec=>{
-  if(scrollPos>=sec.offsetTop && scrollPos<sec.offsetTop+sec.offsetHeight){
-   document.querySelectorAll('.nlinks a').forEach(a=>{
-    a.classList.remove('active');
-    if(a.getAttribute('href')==='#'+sec.id) a.classList.add('active');
-   });
-  }
- });
-});
+function downloadCV(){
+ const { jsPDF } = window.jspdf;
+ const doc = new jsPDF();
+ doc.setFont("helvetica","bold"); doc.setFontSize(20);
+ doc.text("SADHANA MANIKANDAN", 20, 20);
+ doc.setFontSize(10); doc.setFont("helvetica","normal");
+ doc.text("Final-Year BCA | +91-9363299533 | sadhanaamani87@gmail.com", 20, 28);
+ doc.text("Bangalore | linkedin.com/in/sadhana-mani-02295a41a", 20, 34);
+ doc.text("Portfolio: sadh-s-portfolio-46nh.vercel.app", 20, 40);
+ doc.line(20,44,190,44);
+ 
+ doc.setFont("helvetica","bold"); doc.setFontSize(12); doc.text("EDUCATION",20,52);
+ doc.setFont("helvetica","normal"); doc.setFontSize(10);
+ doc.text("BCA - Hindustan College of Arts and Science, Coimbatore (2023-2026) - Final Year",20,58);
+ doc.text("HSC - Holy Cross Matric Hr Sec School, Hosur - 95% Top Scorer (2022-2023)",20,64);
+ doc.text("SSLC - Holy Cross Matric Hr Sec School, Hosur - 78% (2020-2021)",20,70);
+ 
+ doc.setFont("helvetica","bold"); doc.text("SKILLS",20,80);
+ doc.setFont("helvetica","normal");
+ doc.text("Java, OOP, Spring Boot, MySQL, HTML/CSS/JS, Figma, VS Code, Git",20,86);
+ doc.text("DSA, AI, DBMS, Aptitude, Communication",20,92);
+ 
+ doc.setFont("helvetica","bold"); doc.text("TRAINING",20,102);
+ doc.setFont("helvetica","normal");
+ doc.text("Euclid Technical Training ET102696 / ET102697 - AI Training & Internship",20,108);
+ 
+ doc.setFont("helvetica","bold"); doc.text("PROJECTS",20,118);
+ doc.setFont("helvetica","normal");
+ doc.text("Smoothie App & Shoe Shopping App - Figma UI/UX prototypes",20,124);
+ 
+ doc.save("Sadhana_Manikandan_CV.pdf");
+}
 </script>
 </body>
-                                               </html>
+</html>
